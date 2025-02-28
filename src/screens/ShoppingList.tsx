@@ -1,9 +1,13 @@
 import { useNavigate } from "react-router-dom";
+import { useSelector, UseSelector } from "react-redux";
+import { RootState } from "../store/store";
 
 export const ShoppingList = () => {
   const navigate = useNavigate();
-  const items = ["Apples", "Bananas", "Oranges"]
-  const userName = "Jonh"
+  const items = useSelector((state:RootState)=>state.shopping.items)
+  const userName = useSelector((state:RootState)=>state.user.name)
+
+
 
 
   return (
