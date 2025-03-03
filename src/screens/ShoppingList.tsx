@@ -1,14 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { useSelector, UseSelector } from "react-redux";
 import { RootState } from "../store/store";
+import TodoList from "./TodoList";
+
 
 export const ShoppingList = () => {
   const navigate = useNavigate();
   const items = useSelector((state:RootState)=>state.shopping.items)
   const userName = useSelector((state:RootState)=>state.user.name)
-
-
-
 
   return (
     <div className="p-6 min-h-screen min-w-screen bg-gray-100 flex flex-col items-center text-black">
@@ -37,6 +36,8 @@ export const ShoppingList = () => {
       >
         Add Item
       </button>
+
+      <TodoList/>
     </div>
   );
 };
